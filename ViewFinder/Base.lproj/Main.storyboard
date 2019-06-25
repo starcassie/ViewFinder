@@ -41,10 +41,37 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="IuG-S5-MHz" kind="show" identifier="moveToDetail" id="JhX-eX-tjc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lud-Xr-d9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="844.92753623188412" y="129.91071428571428"/>
+        </scene>
+        <!--View Post View Controller-->
+        <scene sceneID="MUF-Zk-oLL">
+            <objects>
+                <viewController id="IuG-S5-MHz" customClass="ViewPostViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHq-Wk-k7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-ZW-3WM">
+                                <rect key="frame" x="87" y="136" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7ii-Br-pjn"/>
+                    </view>
+                    <connections>
+                        <outlet property="pic" destination="TZ2-ZW-3WM" id="lsm-7N-KHe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0x-sR-Iu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="828.34821428571422"/>
         </scene>
         <!--Title-->
         <scene sceneID="W3j-EZ-qA7">

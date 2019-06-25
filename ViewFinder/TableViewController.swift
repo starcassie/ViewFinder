@@ -56,6 +56,19 @@ class TableViewController: UITableViewController {
         getPhotos()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveToDetail", sender: photos[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moveToDetail"{
+            if let photoDetailView = segue.destination as? ViewPostViewController {
+                if let photoToSend = sender as? Photos {
+                    photoDetailView.photo = photoToSend
+                }
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
