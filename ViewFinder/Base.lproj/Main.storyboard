@@ -13,11 +13,12 @@
         <!--ViewFinder-->
         <scene sceneID="kBu-8w-cm2">
             <objects>
-                <tableViewController id="dJb-P3-g9l" sceneMemberID="viewController">
+                <tableViewController id="dJb-P3-g9l" customClass="TableViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bNp-pB-arI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.86965877680000003" green="0.75471327710000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YCs-Nb-ZiZ">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -76,6 +77,9 @@
                                 <rect key="frame" x="191" y="474" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="Rmo-SA-oLu" eventType="touchUpInside" id="kyC-oK-EL5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9o-lS-6Uq">
                                 <rect key="frame" x="280" y="474" width="48" height="30"/>
@@ -86,11 +90,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.85979433579995157" green="0.9585943041663002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="3tT-cO-8H3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ATV-Jg-YZb"/>
                     <connections>
+                        <outlet property="comment" destination="hZU-Vw-U1s" id="xW9-tP-AoC"/>
                         <outlet property="newImage" destination="TUy-a9-WZX" id="w9p-z7-jwa"/>
                     </connections>
                 </viewController>

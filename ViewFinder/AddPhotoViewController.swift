@@ -16,6 +16,8 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBOutlet weak var comment: UITextField!
     @IBOutlet weak var newImage: UIImageView!
     @IBAction func openCamera(_ sender: UIButton) {
         newScreen.sourceType = .camera
@@ -32,6 +34,19 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func accessLibrary(_ sender: UIButton) {
         newScreen.sourceType = .photoLibrary
         present(newScreen, animated: true, completion: nil)
+    }
+    @IBAction func savePhoto(_ sender: Any) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            photoToSave.caption = comment.text
+            if let userImage = newImage.image {
+                if let userImageData = userImage.pngData() {
+                    photoToSave.imageData =  userImageData
+                }
+            }
+        }
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        navigationController?.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation
