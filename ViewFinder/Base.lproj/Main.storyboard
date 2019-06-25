@@ -48,7 +48,7 @@
         <!--Title-->
         <scene sceneID="W3j-EZ-qA7">
             <objects>
-                <viewController id="Rmo-SA-oLu" sceneMemberID="viewController">
+                <viewController id="Rmo-SA-oLu" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLU-NS-mxo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,9 @@
                                 <rect key="frame" x="85" y="474" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="camera"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="Rmo-SA-oLu" eventType="touchUpInside" id="pU9-nL-ahj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtA-1t-Dyb">
                                 <rect key="frame" x="191" y="474" width="32" height="30"/>
@@ -78,12 +81,18 @@
                                 <rect key="frame" x="280" y="474" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="photos"/>
+                                <connections>
+                                    <action selector="accessLibrary:" destination="Rmo-SA-oLu" eventType="touchUpInside" id="ODH-AR-scP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3tT-cO-8H3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ATV-Jg-YZb"/>
+                    <connections>
+                        <outlet property="newImage" destination="TUy-a9-WZX" id="w9p-z7-jwa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-qV-AFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
