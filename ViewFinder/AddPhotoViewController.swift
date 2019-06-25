@@ -13,6 +13,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         newScreen.delegate = self
+        newImage.image = UIImage(named: "img-placeholder.3")
         // Do any additional setup after loading the view.
     }
     

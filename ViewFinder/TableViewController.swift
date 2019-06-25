@@ -82,6 +82,7 @@ class TableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let photoToDelete = photos[indexPath.row]
                 context.delete(photoToDelete)
@@ -90,8 +91,4 @@ class TableViewController: UITableViewController {
             }
         }    
     }
-    
-
-   
-
 }
